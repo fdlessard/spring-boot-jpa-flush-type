@@ -2,13 +2,18 @@ package io.fdlessard.codebites.jpaflush.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
 
 @SuperBuilder
-@Data
+@Getter
+@Setter
+@ToString
 @NoArgsConstructor
 @MappedSuperclass
 public abstract class BaseEntity {

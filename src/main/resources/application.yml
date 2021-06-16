@@ -2,16 +2,13 @@ server:
   port: 8080
 
 management:
+  info:
+    git:
+      mode: full
   endpoints:
     web:
       exposure:
-        include: beans, health, loggers
-    health:
-      enabled: true
-    loggers:
-      enabled: true
-    beans:
-      enabled: true
+        include: "*"
 
 logging:
   level.io.fdlessard.codebites.jpaflush: debug
@@ -38,6 +35,8 @@ spring:
       ddl-auto: validate
       use-new-id-generator-mappings: false
     properties:
+      flushType: AUTO
+      org.hibernate.flushMode: ALWAYS
       hibernate:
         show_sql: true
         format_sql: true
